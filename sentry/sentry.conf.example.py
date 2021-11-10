@@ -3,6 +3,9 @@
 
 from sentry.conf.server import *  # NOQA
 
+# 25MB max object size: keep in sync with MEMCACHED_MAX_ITEM_SIZE
+import memcache
+memcache.SERVER_MAX_VALUE_LENGTH = 1024 * 1024 * 25
 
 # Generously adapted from pynetlinux: https://git.io/JJmga
 def get_internal_network():
