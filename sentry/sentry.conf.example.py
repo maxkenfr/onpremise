@@ -109,9 +109,16 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
         "LOCATION": ["memcached:11211"],
-        "TIMEOUT": 3600,
+        "TIMEOUT": 3600
     }
 }
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+#         'LOCATION': '/var/tmp/django_cache',
+#     }
+# }
 
 # A primary cache is required for things such as processing events
 SENTRY_CACHE = "sentry.cache.redis.RedisCache"

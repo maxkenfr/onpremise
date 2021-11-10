@@ -104,7 +104,7 @@ services:
       <<: *healthcheck_defaults
       # From: https://stackoverflow.com/a/31877626/5155484
       test: echo stats | nc 127.0.0.1 11211
-    command: ["-m", "25m"]
+    command: ["-I", "26214400"]
   redis:
     <<: *restart_policy
     image: "redis:6.2.4-alpine"
